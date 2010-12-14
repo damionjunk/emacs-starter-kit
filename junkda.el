@@ -47,7 +47,10 @@
 ;; Display columns and line numbers
 (setq column-number-mode t)
 (setq line-number-mode t)
+
+;; Visual Word wrap without breaks
 (global-visual-line-mode 1)
+(auto-fill-mode -1)
 
 ;; Make the mouse not scroll like crazy
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
