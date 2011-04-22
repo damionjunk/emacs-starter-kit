@@ -27,6 +27,12 @@
  '(rst-level-6-face ((t (:background "black"))) t))
 
 
+(defun my-compile ()
+    "Use compile to run python programs"
+      (interactive)
+        (compile (concat "python " (buffer-name))))
+(setq compilation-scroll-output t)
+
 ;;
 ;; Color Theme stuff - I wish I had VIM's Jelly Beans.
 (require 'color-theme)
@@ -56,17 +62,22 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
 
-;; 
+;;
 ;; CEDET Stuff
-(load-file "~/src/emacs/cedet-1.0pre7/common/cedet.el")
-(global-ede-mode 1)
-(semantic-load-enable-code-helpers)
-(semantic-load-enable-semantic-debugging-helpers)
-(global-srecode-minor-mode 1)
+;;(load-file "~/src/emacs/cedet-1.0pre7/common/cedet.el")
+;;(global-ede-mode 1)
+;;(semantic-load-enable-code-helpers)
+;;(semantic-load-enable-semantic-debugging-helpers)
+;;(global-srecode-minor-mode 1)
 
 ;;
 ;; ECB Stuff
-(add-to-list 'load-path "~/src/emacs/ecb-2.40")
-(require 'ecb)
-(ecb-layout-switch "top1")
-(ecb-activate)
+;;(add-to-list 'load-path "~/src/emacs/ecb-2.40")
+;;(require 'ecb)
+;;(ecb-layout-switch "top1")
+;;(ecb-activate)
+
+;; Org Mode
+;org mode
+(setq org-agenda-files (list "~/Dropbox/Documents/org-mode/agenda/"))
+(setq org-startup-indented t)
